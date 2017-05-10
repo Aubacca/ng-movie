@@ -1,0 +1,52 @@
+<h1>Film suchen</h1>
+<input type="text" #searchString placeholder="Suche eingeben .."/>
+
+<button (click)=searchMovie(searchString.value)>Suchen</button>
+
+<h3>{{serverError}}</h3>
+<div *ngIf="searchError" class="error">
+  {{searchError.Error}}
+</div>
+
+<div class="imdb-section">
+  <div>
+    <ul>
+      <li *ngFor="let movie of resultMovies">
+        <div>
+          <span class="imdb-block">
+            <h2><a href="http://www.imdb.com/title/{{ movie.imdbID }}/" target="_blank">{{ movie.Title }}</a></h2>
+            <p>Year: {{ movie.Year }}</p>
+            <p>Type: {{ movie.Type }}</p>
+            <p>imdb ID: <a href="http://www.imdb.com/title/{{ movie.imdbID }}/" target="_blank">{{ movie.imdbID }}</a></p>
+            <button (click)="addMovie(movie, $event)">Add</button>
+          </span>
+          <span class="imdb-block-image">
+            <p *ngIf="movie.Poster !== 'N/A'"><img [src]=movie.Poster class="poster-image"/></p>
+          </span>
+        </div>
+        <hr>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div class="tmdb-section">
+  <ul>
+    <li *ngFor="let movie of resultTmdbMovies">
+      <div>
+        <div class="imdb-block">
+          <h2><a href="http://www.imdb.com/title/{{ movie.imdbID }}/" target="_blank">{{ movie.title }}</a></h2>
+          <p>Year: {{ movie.release_date }}</p>
+          <p>Overview: {{ movie.overview }}</p>
+          <p>imdb ID: <a href="http://www.imdb.com/title/{{ movie.imdbID }}/" target="_blank">{{ movie.imdbID }}</a></p>
+          <button (click)="addMovie(movie, $event)">Add</button>        
+        </div>
+        <div class="imdb-block-image">
+          <p *ngIf="movie.poster_path !== null"><img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" class="poster-image"/></p>
+        </div>
+      </div>
+      <hr>
+    </li>
+  </ul>
+
+</div>
