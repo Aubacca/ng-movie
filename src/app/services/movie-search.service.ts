@@ -15,6 +15,13 @@ export class MovieSearchService {
   private options = '';
   constructor(private http: Http) { }
 
+  /**
+   * setApiKey
+   */
+  public setApiKey(newApiKey: string) {
+    this.options = newApiKey;
+  }
+
 //  searchMovies(searchTerm: string): Observable<Object> {
   public searchOmdbMovies(searchTerm: string, pageNumber: number = 1): Observable<any> {
     console.log(searchTerm);

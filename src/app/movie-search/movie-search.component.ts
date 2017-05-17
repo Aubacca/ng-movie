@@ -22,9 +22,11 @@ export class MovieSearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  searchMovie(searchTerm): void {
+  public searchMovie(searchTerm: string) {
     this.searchError = undefined;
     this.resultMovies = undefined;
+
+    this.movieSearchService.setApiKey('');
 
     this.movieSearchService.searchOmdbMovies(searchTerm, 1)
 //      .map(r => r.json())

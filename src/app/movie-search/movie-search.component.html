@@ -1,5 +1,13 @@
 <h1>Film suchen</h1>
-<input type="text" #searchString placeholder="Suche eingeben .."/>
+
+<p>
+  <label for="apiKeyItem">API key TmDB</label>
+  <input id="apiKeyItem" type="text" #apiKeyString placeholder="Enter API key for TmDB .."/>
+</p>
+<p>
+  <label for="searchStringElement">Film to search</label>
+  <input id="searchStringElement" type="text" #searchString placeholder="Suche eingeben .."/>
+</p>
 
 <button (click)=searchMovie(searchString.value)>Suchen</button>
 
