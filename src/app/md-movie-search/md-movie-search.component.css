@@ -1,3 +1,14 @@
 .example-container {
   width: 500px;
 }
+
+.example-card {
+  width: 200px;
+  float: left;
+  margin: 1rem;
+}
+
+.example-header-image {
+  background-image: url('../../assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
