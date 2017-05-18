@@ -1,0 +1,19 @@
+<div class="example-container">
+  <md-input-container class="example-full-width">
+    <input mdInput placeholder="Enter name of the movie to search for .." [(ngModel)]="searchString">
+  </md-input-container>
+  <div class="button-row">
+    <button md-raised-button (click)="searchMovie()">Search</button>
+  </div>
+</div>
+
+
+<div>
+  <md-list>
+    <md-list-item *ngFor="let movie of resultMovies">
+      <a href="http://www.imdb.com/title/{{ movie.imdbID }}/" target="_blank"><md-icon>home</md-icon></a>
+      <i class="material-icons">theaters</i>{{ movie.Title }}
+    </md-list-item>
+  </md-list>
+
+</div>
