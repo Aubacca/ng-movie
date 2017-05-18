@@ -17,6 +17,8 @@ export class MovieSearchComponent implements OnInit {
   private searchError: OmdbError;
   private serverError: string;
 
+  private apiKeyString: string;
+
   constructor(private movieSearchService: MovieSearchService) { }
 
   ngOnInit() {
@@ -26,7 +28,7 @@ export class MovieSearchComponent implements OnInit {
     this.searchError = undefined;
     this.resultMovies = undefined;
 
-    this.movieSearchService.setApiKey('');
+    this.movieSearchService.setApiKey(this.apiKeyString);
 
     this.movieSearchService.searchOmdbMovies(searchTerm, 1)
 //      .map(r => r.json())
