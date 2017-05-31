@@ -2,8 +2,8 @@ import { Movie } from './../model/Movie';
 import { Http, Response } from '@angular/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-//import 'rxjs/add/operrator/map';
-//import 'rxjs/Rx';
+// import 'rxjs/add/operrator/map';
+// import 'rxjs/Rx';
 
 import 'rxjs/add/observable/throw';
 
