@@ -23,7 +23,7 @@ export class MdMovieSearchComponent {
   constructor(private movieSearchService: MovieSearchService) { }
 
   protected searchMovie() {
-
+/*
     this.movieSearchService.searchOmdbMovies(this.searchString, 1)
       .do(r => console.log(r))
       .subscribe(r => {
@@ -33,7 +33,7 @@ export class MdMovieSearchComponent {
           this.searchError = r;
         }
       }, error => this.serverError = error);
-
+*/
       this.movieSearchService.searchTmdbMovies(this.searchString, 1)
         .do(r => console.log(r))
         .subscribe(r => this.resultTmdbMovies = r.results);
